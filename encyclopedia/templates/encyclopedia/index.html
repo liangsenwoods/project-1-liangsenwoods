@@ -3,14 +3,20 @@
 {% block title %}
     Encyclopedia
 {% endblock %}
-
+{% block nav-home %}<li class="nav-active">Home</li>{% endblock %}
 {% block body %}
-    <h1>All Pages</h1>
-
-    <ul>
-        {% for entry in entries %}
-            <li>{{ entry }}</li>
-        {% endfor %}
-    </ul>
+    <div id="index">
+        <!-- <h1>Pages</h1> -->
+        
+        <ul id ="show_list">
+           
+            {% for entry in entries %}
+               
+                <li><a href= "{% url 'wiki:title' title=entry %}">{{ entry }}</a> </li> 
+              
+            {% endfor %}
+        </ul>
+    
+    </div>
 
 {% endblock %}
